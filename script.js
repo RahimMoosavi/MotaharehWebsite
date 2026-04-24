@@ -1,128 +1,64 @@
-// Mobile menu toggle
-const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-const navMenu = document.querySelector('.nav-menu');
+// Mobile nav toggle
+const toggle = document.querySelector('.mobile-toggle');
+const navLinks = document.querySelector('.nav-links');
 
-if (mobileMenuToggle) {
-    mobileMenuToggle.addEventListener('click', function() {
-        this.classList.toggle('active');
-        navMenu.classList.toggle('active');
-    });
-}
-
-// Close mobile menu when clicking on a link
-document.querySelectorAll('.nav-menu a').forEach(link => {
-    link.addEventListener('click', function() {
-        if (window.innerWidth <= 768) {
-            mobileMenuToggle.classList.remove('active');
-            navMenu.classList.remove('active');
-        }
-    });
+toggle.addEventListener('click', () => {
+  toggle.classList.toggle('active');
+  navLinks.classList.toggle('open');
 });
 
-// Close mobile menu when clicking outside
-document.addEventListener('click', function(e) {
-    if (window.innerWidth <= 768) {
-        if (!navMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
-            mobileMenuToggle.classList.remove('active');
-            navMenu.classList.remove('active');
-        }
-    }
+// Close mobile nav on link click
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    toggle.classList.remove('active');
+    navLinks.classList.remove('open');
+  });
 });
 
-// Close mobile menu when window is resized to desktop size
-window.addEventListener('resize', function() {
-    if (window.innerWidth > 768) {
-        mobileMenuToggle.classList.remove('active');
-        navMenu.classList.remove('active');
-    }
+// Close mobile nav when resized to desktop
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 960) {
+    toggle.classList.remove('active');
+    navLinks.classList.remove('open');
+  }
 });
 
-// Smooth scrolling for navigation links
+// Smooth scroll with nav offset
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            const navbarHeight = window.innerWidth <= 480 ? 60 : 70;
-            const offsetTop = target.offsetTop - navbarHeight;
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
-
-// Form submission handling
-document.getElementById('contactForm').addEventListener('submit', function(e) {
+  anchor.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (!target) return;
     e.preventDefault();
-    
-    // Get form data
-    const formData = new FormData(this);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const phone = formData.get('phone');
-    const message = formData.get('message');
-    
-    // Create mailto link (will open default email client)
-    // Note: For GoDaddy, you may want to use their form handler or email forwarding
-    const subject = encodeURIComponent('Contact Form Submission from ' + name);
-    const body = encodeURIComponent(
-        `Name: ${name}\n` +
-        `Email: ${email}\n` +
-        `Phone: ${phone || 'Not provided'}\n\n` +
-        `Message:\n${message}`
-    );
-    
-    // For now, using mailto - you can replace this with GoDaddy's form handler URL
-    // If GoDaddy provides a form handler endpoint, replace the mailto with:
-    // fetch('YOUR_GODADDY_FORM_HANDLER_URL', { method: 'POST', body: formData })
-    
-    window.location.href = `mailto:your-email@godaddy.com?subject=${subject}&body=${body}`;
-    
-    // Show success message
-    alert('Thank you for your message! Your email client should open. If not, please email directly.');
-    
-    // Reset form
-    this.reset();
+    const navH = document.querySelector('nav.top').offsetHeight;
+    window.scrollTo({ top: target.offsetTop - navH - 8, behavior: 'smooth' });
+  });
 });
 
-// Add scroll effect to navbar
-let lastScroll = 0;
-const navbar = document.querySelector('.navbar');
-
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    
-    if (currentScroll > 100) {
-        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.15)';
-    } else {
-        navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+// FAQ accordion — one open at a time
+document.querySelectorAll('.faq-item').forEach(el => {
+  el.addEventListener('toggle', () => {
+    if (el.open) {
+      document.querySelectorAll('.faq-item').forEach(o => { if (o !== el) o.removeAttribute('open'); });
     }
-    
-    lastScroll = currentScroll;
+  });
 });
 
-// Fade in animation on scroll
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
+// Contact form — mailto handler
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const name     = this.name.value.trim();
+  const email    = this.email.value.trim();
+  const language = this.language.value;
+  const interest = this.interest.value;
+  const message  = this.message.value.trim();
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
+  const subject = encodeURIComponent('Consultation request from ' + name);
+  const body = encodeURIComponent(
+    `Name: ${name}\nEmail: ${email}\nPreferred language: ${language}\nInterested in: ${interest}\n\n${message}`
+  );
+  window.location.href = `mailto:hello@motahareh.ca?subject=${subject}&body=${body}`;
 
-// Observe sections for fade-in effect
-document.querySelectorAll('section').forEach(section => {
-    section.style.opacity = '0';
-    section.style.transform = 'translateY(20px)';
-    section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(section);
+  const success = document.getElementById('formSuccess');
+  success.style.display = 'block';
+  this.querySelector('.submit').style.display = 'none';
 });
-
