@@ -74,7 +74,7 @@ function Nav({ current = "", darkHero = false }) {
   const services = [
     { label: "Psychotherapy", href: "psychotherapy.html", key: "psychotherapy", note: "Virtual · Ontario" },
     { label: "Yoga & Somatic",  href: "yoga.html", key: "yoga",                 note: "Private · group" },
-    { label: "Return to Roots", href: "signature.html", key: "signature",     note: "Signature · 5 weeks",  flag: true },
+    { label: "The Return", href: "the-return.html", key: "the-return",     note: "Signature · 6 weeks",  flag: true },
   ];
 
   const links = [
@@ -112,14 +112,14 @@ function Nav({ current = "", darkHero = false }) {
               className={`text-[14px] transition-colors flex items-center gap-1.5 relative group ${
                 onDark
                   ? "text-sand-100 hover:text-sand-50"
-                  : ["psychotherapy","yoga","signature"].includes(current) ? "text-ink" : "text-ink-soft hover:text-ink"
+                  : ["psychotherapy","yoga","the-return"].includes(current) ? "text-ink" : "text-ink-soft hover:text-ink"
               }`}
             >
               Services
               <svg width="9" height="6" viewBox="0 0 9 6" className={`transition-transform ${svcOpen ? "rotate-180" : ""}`}>
                 <path d="M1 1l3.5 3.5L8 1" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
-              {["psychotherapy","yoga","signature"].includes(current) && (
+              {["psychotherapy","yoga","the-return"].includes(current) && (
                 <span className="absolute -bottom-1 left-0 right-4 h-px bg-terra-500"></span>
               )}
             </button>
@@ -249,7 +249,7 @@ function Footer() {
             <ul className="mt-4 space-y-2 text-[14px] text-ink-soft">
               <li><a href="psychotherapy.html" className="hover:text-ink">Psychotherapy</a></li>
               <li><a href="yoga.html" className="hover:text-ink">Yoga &amp; Somatic</a></li>
-              <li><a href="signature.html" className="hover:text-ink">Return to Roots</a></li>
+              <li><a href="the-return.html" className="hover:text-ink">The Return</a></li>
             </ul>
           </div>
           <div className="col-span-6 md:col-span-2">
@@ -280,27 +280,6 @@ function Footer() {
         </div>
       </div>
     </footer>
-  );
-}
-
-// ---------- Sticky cohort CTA (signature funnel) ----------
-
-function StickyCTA() {
-  const [show, setShow] = useState(false);
-  useEffect(() => {
-    const onScroll = () => setShow(window.scrollY > 900 && window.scrollY < (document.body.scrollHeight - 1400));
-    window.addEventListener("scroll", onScroll);
-    onScroll();
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-  return (
-    <div className={`fixed bottom-5 left-1/2 -translate-x-1/2 z-30 transition-all duration-500 ${show ? "translate-y-0 opacity-100" : "translate-y-16 opacity-0 pointer-events-none"}`}>
-      <div className="flex items-center gap-3 bg-forest-900 text-sand-100 pl-5 pr-2 py-2 rounded-full shadow-2xl shadow-forest-900/30 ring-1 ring-sand-50/10">
-        <span className="w-2 h-2 rounded-full bg-terra-400 animate-pulse"></span>
-        <span className="text-[13px]">Winter '26 cohort · 2 spots remaining</span>
-        <a href="signature.html" className="ml-2 bg-terra-500 hover:bg-terra-600 text-sand-50 px-4 py-2 rounded-full text-[13px] font-medium transition-colors">Apply</a>
-      </div>
-    </div>
   );
 }
 
@@ -373,10 +352,10 @@ function ServiceCrossLink({ exclude }) {
       tag: "Private · Group",
     },
     {
-      key: "signature",
-      label: "Return to Roots",
-      copy: "5-week holistic healing package. Psychotherapy, yoga, and spirituality.",
-      href: "signature.html",
+      key: "the-return",
+      label: "The Return",
+      copy: "6-week mind-body-spirit integration program. Psychotherapy, embodiment, and spiritual grounding.",
+      href: "the-return.html",
       tag: "⌖ Signature package",
     },
   ];
@@ -394,14 +373,14 @@ function ServiceCrossLink({ exclude }) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mt-12">
           {items.map((it) => (
             <a key={it.key} href={it.href} className={`group block p-8 lg:p-10 rounded-sm ring-soft transition-colors ${
-              it.key === "signature" ? "bg-forest-900 text-sand-100 hover:bg-forest-800" : "bg-sand-50 hover:bg-sand-100"
+              it.key === "the-return" ? "bg-forest-900 text-sand-100 hover:bg-forest-800" : "bg-sand-50 hover:bg-sand-100"
             }`}>
               <div className="flex items-baseline justify-between">
-                <MonoLabel className={it.key === "signature" ? "!text-terra-400" : ""}>{it.tag}</MonoLabel>
-                <ArrowIcon className={`${it.key === "signature" ? "text-sand-200" : "text-ink-mute"} group-hover:translate-x-1 transition-transform`} />
+                <MonoLabel className={it.key === "the-return" ? "!text-terra-400" : ""}>{it.tag}</MonoLabel>
+                <ArrowIcon className={`${it.key === "the-return" ? "text-sand-200" : "text-ink-mute"} group-hover:translate-x-1 transition-transform`} />
               </div>
-              <h3 className={`font-display text-[40px] md:text-[48px] leading-[1.05] mt-8 ${it.key === "signature" ? "text-sand-50" : "text-ink"}`}>{it.label}</h3>
-              <p className={`mt-4 text-[15px] leading-[1.6] max-w-md ${it.key === "signature" ? "text-sand-200/80" : "text-ink-soft"}`}>{it.copy}</p>
+              <h3 className={`font-display text-[40px] md:text-[48px] leading-[1.05] mt-8 ${it.key === "the-return" ? "text-sand-50" : "text-ink"}`}>{it.label}</h3>
+              <p className={`mt-4 text-[15px] leading-[1.6] max-w-md ${it.key === "the-return" ? "text-sand-200/80" : "text-ink-soft"}`}>{it.copy}</p>
             </a>
           ))}
         </div>
@@ -414,6 +393,6 @@ function ServiceCrossLink({ exclude }) {
 
 Object.assign(window, {
   MonoLabel, SectionHeader, JaneCTA, ArrowIcon,
-  Nav, Footer, TrustBanner, StickyCTA,
+  Nav, Footer, TrustBanner,
   ServicePageHero, ServiceCrossLink,
 });

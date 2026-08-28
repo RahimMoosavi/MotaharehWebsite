@@ -315,7 +315,6 @@ function App() {
         <ServiceCrossLink exclude="yoga" />
       </main>
       <Footer />
-      <StickyCTA />
     </>
   );
 }

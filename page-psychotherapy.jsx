@@ -373,7 +373,6 @@ function App() {
         <ServiceCrossLink exclude="psychotherapy" />
       </main>
       <Footer />
-      <StickyCTA />
     </>
   );
 }
