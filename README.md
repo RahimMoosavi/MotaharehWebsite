@@ -1,43 +1,57 @@
-# Motahareh Psychotherapy Website
+# Motahareh — practice website
 
-A professional, calming website for psychotherapy services.
+Static site for a psychotherapy and Islamic psychospiritual practice.
+Hosted on GitHub Pages at **motahareh.ca** (see `CNAME`).
 
-## Files
+## How it works
 
-- `index.html` - Main homepage
-- `styles.css` - Styling and design
-- `script.js` - Interactive functionality
+There is no build step. Each page is a plain HTML shell that loads React, Babel, and
+Tailwind from a CDN, then renders one `.jsx` file in the browser.
 
-## Setting Up the Contact Form with GoDaddy
+| Page | Shell | Content |
+| --- | --- | --- |
+| Home | `index.html` | `home.jsx` |
+| About | `about.html` | `page-about.jsx` |
+| Psychotherapy | `psychotherapy.html` | `page-psychotherapy.jsx` |
+| The Return | `the-return.html` | `page-the-return.jsx` |
 
-The contact form currently uses a `mailto:` link which opens the user's email client. To properly integrate with GoDaddy's email system, you have a few options:
+`shared.jsx` holds everything common to all four pages: the nav, footer, credential
+strip, closing call-to-action, cross-links, and the small primitives (`SectionHeader`,
+`BookCTA`, `MonoLabel`, `TextLink`). Every page loads `shared.jsx` first, then its own file.
 
-### Option 1: Use GoDaddy Email Forwarding
-1. Log into your GoDaddy account
-2. Go to your domain's email settings
-3. Set up email forwarding to forward emails from your domain to your preferred email address
-4. Update the `mailto:` link in `script.js` (line 30) with your GoDaddy email address
+The design tokens — colours, fonts, the paper-grain and placeholder textures — live in the
+`<head>` of each shell. They are identical across shells; change one, change all.
 
-### Option 2: Use GoDaddy Form Handler
-1. GoDaddy may provide a form handler service
-2. Replace the form submission code in `script.js` with a fetch request to GoDaddy's form handler endpoint
-3. Update the form action attribute in `index.html` if needed
+## Running it locally
 
-### Option 3: Use a Third-Party Form Service
-Consider using services like:
-- Formspree
-- Netlify Forms
-- EmailJS
+The pages fetch their JSX over HTTP, so opening the files directly from disk will not work.
+Serve the folder instead:
 
-These can forward form submissions to your GoDaddy email inbox.
+```bash
+python -m http.server 8080
+```
 
-## Customization
+Then visit http://localhost:8080. In Claude Code, `.claude/launch.json` starts the same
+server under the name `site`.
 
-- **Hero Image**: The current hero image uses an Unsplash photo. Replace the URL in `styles.css` (line 50) with your own therapy-related image
-- **Colors**: Update the CSS variables in `styles.css` (lines 4-11) to match your brand colors
-- **Content**: Edit the text content in `index.html` to reflect your specific services and information
+## Editing content
 
-## Testing
+Nearly all copy lives in plain arrays and props near the top of each component, so text
+changes rarely require touching markup. Site-wide values — the booking URL, the contact
+address, and the nav/footer page list — are constants at the top of `shared.jsx`.
 
-Simply open `index.html` in a web browser to view the website. For production, upload all files to your GoDaddy hosting.
+Two services are offered: **Psychotherapy** and **The Return**. Yoga, breathwork, and
+embodiment appear throughout as modalities inside that work, not as a bookable service.
 
+## Before going live
+
+A few things are placeholders and need real values:
+
+- **`BOOKING_URL` in `shared.jsx`** points at `https://mepro.ai`. Swap in the specific
+  practitioner booking link once it exists.
+- **Credentials on `about.html`** contain bracketed placeholders (degree, trainings,
+  languages). Fill these in or delete the rows.
+- **Fees** — `$175` per 50-minute session and the insurer list are carried over from the
+  previous version of the site. Confirm both.
+- **Photography** — every image is a hatched placeholder block. Replace with real photos.
+- **`hello@motahareh.ca`** is used for every contact link.

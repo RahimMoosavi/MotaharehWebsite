@@ -3,7 +3,14 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Motahareh — Integrated Psychotherapy, Yoga &amp; Psychospiritual Care</title>
+<title>Motahareh — Integrative Psychotherapy & Spiritually Grounded Care</title>
+<meta name="description" content="A space to reconnect mind, body, spirit, and relationships — through integrative psychotherapy, embodied practice, and spiritually grounded care. Virtual sessions, insurance eligible in Ontario." />
+<link rel="canonical" href="https://motahareh.ca/index.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Motahareh" />
+<meta property="og:title" content="Motahareh — Integrative Psychotherapy & Spiritually Grounded Care" />
+<meta property="og:description" content="A space to reconnect mind, body, spirit, and relationships — through integrative psychotherapy, embodied practice, and spiritually grounded care. Virtual sessions, insurance eligible in Ontario." />
+<meta property="og:url" content="https://motahareh.ca/index.html" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -30,10 +37,10 @@
 </script>
 <style>
   html { scroll-behavior: smooth; }
+  section[id] { scroll-margin-top: 88px; }
   body { background: #fbf8f2; color: #1f261f; font-family: 'DM Sans', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
   .font-display { font-feature-settings: "ss01","ss02"; letter-spacing: -0.01em; }
   .mono-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; }
-  .hairline { background-image: linear-gradient(to right, currentColor 50%, transparent 50%); background-size: 8px 1px; background-repeat: repeat-x; }
   .grain {
     background-image:
       radial-gradient(rgba(31,38,31,0.04) 1px, transparent 1px),
@@ -47,10 +54,6 @@
     background-color: #ece2cd;
     background-image: repeating-linear-gradient(135deg, rgba(31,38,31,0.06) 0 1px, transparent 1px 14px);
   }
-  .placeholder-img-dark {
-    background-color: #243024;
-    background-image: repeating-linear-gradient(135deg, rgba(251,248,242,0.04) 0 1px, transparent 1px 14px);
-  }
   .ring-soft { box-shadow: inset 0 0 0 1px rgba(31,38,31,0.10); }
   ::selection { background: #b8623a; color: #fbf8f2; }
 </style>
@@ -62,40 +65,35 @@
 <body>
 <div id="root"></div>
 
-<!-- Tailwind CDN class hints — ensures JIT generates styles for classes used in external JSX -->
+<!-- Tailwind CDN class hints - keeps the JIT aware of classes that only appear inside the JSX files. -->
 <div hidden class="
-  bg-sand-50 bg-sand-100 bg-sand-200 bg-sand-100/60 bg-sand-100/70 bg-sand-200/60 bg-sand-50/85
-  bg-terra-500 bg-terra-400 bg-terra-600 bg-terra-500/60
-  bg-sage-300 bg-sage-400 bg-sage-500
-  bg-forest-700 bg-forest-800 bg-forest-900 bg-forest-900/30
-  bg-ink bg-ink/10 bg-ink/[0.03] bg-transparent
-  text-sand-50 text-sand-100 text-sand-200 text-sand-200/80 text-sand-200/85
-  text-ink text-ink-soft text-ink-mute text-ink/50 text-ink/15
-  text-terra-400 text-terra-500 text-terra-600
-  text-sage-600
-  border-ink/8 border-ink/10 border-ink/15 border-ink/20 border-ink/40 border-terra-500/30
+  bg-sand-50 bg-sand-100 bg-sand-200 bg-sand-50/90 bg-sand-100/60 bg-sand-100/70
+  bg-terra-400 bg-terra-500 bg-terra-600 bg-terra-500/60
+  bg-sage-300/30 bg-sage-400/40 bg-sage-500
+  bg-forest-700 bg-forest-800 bg-forest-900
+  bg-ink bg-ink/10 bg-ink/15 bg-ink/[0.03] bg-transparent
+  text-sand-50 text-sand-100 text-sand-200 text-sand-200/40 text-sand-200/60 text-sand-200/70 text-sand-200/80 text-sand-200/85
+  text-ink text-ink-soft text-ink-mute text-ink/15 text-ink/50
+  text-terra-400 text-terra-500/40 text-terra-500/50 text-terra-600
+  border-ink/8 border-ink/10 border-ink/15 border-ink/20 border-ink/40 border-sand-200/30 border-terra-500/30
   divide-ink/10 divide-ink/15
-  shadow-xl shadow-2xl shadow-ink/10
-  backdrop-blur-md
-  rounded-sm rounded-full
-  font-display font-medium font-mono
-  animate-pulse
-  rotate-180 rotate-45
-  gap-px
-  max-w-[1280px] h-[72px] pt-[112px] min-h-[360px]
-  grid-cols-12 grid-cols-1 grid-cols-2 grid-cols-3
-  col-span-2 col-span-3 col-span-4 col-span-5 col-span-6 col-span-7 col-span-8 col-span-12
-  md:col-span-2 md:col-span-3 md:col-span-5 md:col-span-6
-  lg:col-span-4 lg:col-span-8
-  opacity-50 opacity-60 opacity-[0.07] opacity-30 opacity-20
-  hover:bg-sand-100 hover:bg-ink hover:bg-terra-600 hover:bg-forest-800 hover:bg-ink/50
-  hover:text-ink hover:text-sand-50 hover:text-terra-600
-  hover:border-ink/40
-  hover:translate-y-[-2px] hover:translate-x-0.5
-  group-hover:text-terra-600 group-hover:text-terra-400 group-hover:translate-x-1
-  group-hover:decoration-terra-500
-  aspect-[3/4] aspect-[4/3]
-  bg-terra-400/20 bg-forest-800/15 bg-sage-400/30
+  decoration-ink/20 decoration-ink/30 decoration-current/30 decoration-sand-200/40 decoration-terra-400 decoration-terra-500
+  underline-offset-4 backdrop-blur-md rounded-sm rounded-full font-display font-medium font-mono
+  shadow-xl shadow-2xl shadow-ink/10 animate-pulse
+  max-w-[1280px] max-w-sm max-w-xl max-w-2xl max-w-3xl h-[72px] pt-[112px] min-h-[300px] min-h-[360px]
+  grid-cols-1 grid-cols-2 grid-cols-3 grid-cols-12 gap-px
+  md:grid-cols-2 md:grid-cols-3 md:grid-cols-4 lg:grid-cols-3
+  col-span-2 col-span-3 col-span-4 col-span-5 col-span-6 col-span-7 col-span-8 col-span-9 col-span-12
+  md:col-span-2 md:col-span-3 md:col-span-4 md:col-span-5 md:col-span-6 md:col-span-7 md:col-span-9
+  lg:col-span-4 lg:col-span-5 lg:col-span-7 lg:col-span-8
+  aspect-[3/4] aspect-[4/3] aspect-[4/5] md:aspect-square
+  opacity-20 opacity-30 opacity-50 opacity-60 opacity-[0.07]
+  hover:bg-sand-100 hover:bg-ink hover:bg-terra-600 hover:bg-forest-800 hover:bg-ink/[0.03]
+  hover:text-ink hover:text-sand-50 hover:text-terra-600 hover:border-ink/40
+  hover:translate-y-[-2px] hover:decoration-terra-400
+  group-hover:text-terra-600 group-hover:text-terra-400 group-hover:translate-x-1 group-hover:translate-x-0.5
+  group-hover:decoration-terra-500 group-open:rotate-45
+  rotate-45 rotate-180
 "></div>
 
 <script type="text/babel" src="shared.jsx"></script>
