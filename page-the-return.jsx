@@ -37,7 +37,7 @@ function ReturnHero() {
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-4">
-              <a href="#book" className="inline-flex items-center gap-2.5 bg-terra-500 hover:bg-terra-600 text-sand-50 px-7 py-3.5 rounded-full text-[15px] font-medium transition-colors group">
+              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2.5 bg-terra-500 hover:bg-terra-600 text-sand-50 px-7 py-3.5 rounded-full text-[15px] font-medium transition-colors group">
                 Book a free discovery call
                 <ArrowIcon className="transition-transform group-hover:translate-x-0.5" />
               </a>
@@ -52,7 +52,7 @@ function ReturnHero() {
             <div className="border-t border-sand-200/15 divide-y divide-sand-200/15">
               {[
                 ["6 sessions",     "One per week (flexible)"],
-                ["Fully virtual",  "Secure video · Ontario"],
+                ["Fully virtual",  "Secure video"],
                 ["$175 / session", "Insurance eligible · Sliding scale"],
                 ["Rolling start",  "Begin when you're ready"],
               ].map(([k, v]) => (
@@ -278,7 +278,7 @@ function Pricing() {
               </div>
 
               <div className="mt-10">
-                <a href="#book" className="inline-flex items-center gap-2.5 bg-terra-500 hover:bg-terra-600 text-sand-50 px-7 py-3.5 rounded-full text-[15px] font-medium transition-colors group">
+                <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2.5 bg-terra-500 hover:bg-terra-600 text-sand-50 px-7 py-3.5 rounded-full text-[15px] font-medium transition-colors group">
                   Book a free discovery call
                   <ArrowIcon className="transition-transform group-hover:translate-x-0.5" />
                 </a>
@@ -379,7 +379,7 @@ function ClosingCTA() {
         </p>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-          <a href="#" className="inline-flex items-center gap-2.5 bg-terra-500 hover:bg-terra-600 text-sand-50 px-8 py-4 rounded-full text-[16px] font-medium transition-colors group">
+          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2.5 bg-terra-500 hover:bg-terra-600 text-sand-50 px-8 py-4 rounded-full text-[16px] font-medium transition-colors group">
             Book a free discovery call
             <ArrowIcon className="transition-transform group-hover:translate-x-0.5" />
           </a>
@@ -392,9 +392,9 @@ function ClosingCTA() {
         <div className="mt-14 flex items-center justify-center gap-8 text-[13px] text-sand-200/50">
           <span>CRPO (Qualifying)</span>
           <span className="w-1 h-1 rounded-full bg-sand-200/30"></span>
-          <span>Insurance eligible</span>
+          <span>Insurance eligible in Ontario</span>
           <span className="w-1 h-1 rounded-full bg-sand-200/30"></span>
-          <span>Virtual · Ontario</span>
+          <span>Fully virtual</span>
         </div>
       </div>
     </section>
