@@ -6,7 +6,7 @@ const { useState, useEffect } = React;
 // ---------- Site-wide constants ----------
 
 const BOOKING_URL = "https://client.mepro.ai/book/3b921ebc";
-const CONTACT_EMAIL = "hello@motahareh.ca";
+const CONTACT_EMAIL = "therapy@motahareh.ca";
 
 const PAGES = [
   { key: "about",         label: "About",          href: "about.html" },

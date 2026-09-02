@@ -52,4 +52,4 @@ A few things are placeholders and need real values:
 - **Fees** — `$175` per 50-minute session and the insurer list are carried over from the
   previous version of the site. Confirm both.
 - **Photography** — every image is a hatched placeholder block. Replace with real photos.
-- **`hello@motahareh.ca`** is used for every contact link.
+- **`therapy@motahareh.ca`** is used for every contact link.

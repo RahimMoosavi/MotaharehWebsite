@@ -383,7 +383,7 @@ function ClosingCTA() {
             Book a free discovery call
             <ArrowIcon className="transition-transform group-hover:translate-x-0.5" />
           </a>
-          <a href="mailto:hello@motahareh.ca" className="inline-flex items-center gap-2 text-[15px] text-sand-200/80 hover:text-sand-50 transition-colors">
+          <a href={`mailto:${CONTACT_EMAIL}`} className="inline-flex items-center gap-2 text-[15px] text-sand-200/80 hover:text-sand-50 transition-colors">
             <span className="underline decoration-sand-200/30 underline-offset-4">Or email me first</span>
             <ArrowIcon />
           </a>
