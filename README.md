@@ -47,8 +47,6 @@ embodiment appear throughout as modalities inside that work, not as a bookable s
 
 A few things are placeholders and need real values:
 
-- **`BOOKING_URL` in `shared.jsx`** points at `https://mepro.ai`. Swap in the specific
-  practitioner booking link once it exists.
 - **Credentials on `about.html`** contain bracketed placeholders (degree, trainings,
   languages). Fill these in or delete the rows.
 - **Fees** — `$175` per 50-minute session and the insurer list are carried over from the
