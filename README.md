@@ -51,5 +51,8 @@ A few things are placeholders and need real values:
   languages). Fill these in or delete the rows.
 - **Fees** — `$175` per 50-minute session and the insurer list are carried over from the
   previous version of the site. Confirm both.
-- **Photography** — every image is a hatched placeholder block. Replace with real photos.
+- **Photography** — the About-teaser image on the home page is real: two art-directed
+  crops of one portrait, `assets/motahareh-in-practice.jpg` (tight, desktop) and
+  `assets/motahareh-in-practice-mobile.jpg` (roomier, phone thumbnail), both graded
+  with a `#f5efe3` backdrop. Every other image is still a hatched placeholder block.
 - **`therapy@motahareh.ca`** is used for every contact link.

@@ -47,19 +47,51 @@ function Hero() {
 
 // ---------- About teaser ----------
 
+// The About-teaser photo. Two art-directed crops of the same portrait: a tight
+// editorial square beside the copy on desktop, a roomier one at thumbnail size on
+// phones. Only the visible one is ever fetched — the hidden copy never intersects
+// the viewport, so lazy-loading leaves it alone.
+function AboutPhoto({ src, srcSet, sizes, size, className = "" }) {
+  return (
+    <div className={`aspect-square bg-sand-100 rounded-sm ring-soft relative overflow-hidden ${className}`}>
+      <img
+        src={src}
+        srcSet={srcSet}
+        sizes={sizes}
+        width={size}
+        height={size}
+        loading="lazy"
+        decoding="async"
+        alt="Motahareh, Registered Psychotherapist (Qualifying), in a deep red hijab and woven shawl"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+      <div className="absolute inset-0 grain opacity-20 pointer-events-none"></div>
+    </div>
+  );
+}
+
 function AboutTeaser() {
   return (
     <section id="about" data-screen-label="Home — About teaser" className="py-24 md:py-28">
       <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
         <div className="grid grid-cols-12 gap-x-6 gap-y-10 lg:gap-16 items-center">
-          <div className="col-span-12 md:col-span-5">
-            <div className="aspect-[4/3] md:aspect-square placeholder-img rounded-sm ring-soft relative overflow-hidden">
-              <div className="absolute inset-0 grain opacity-30"></div>
-              <div className="absolute bottom-4 left-4 mono-label bg-sand-50 px-2 py-1">In practice</div>
-            </div>
+          <div className="hidden md:block md:col-span-5">
+            <AboutPhoto
+              src="assets/motahareh-in-practice.jpg"
+              srcSet="assets/motahareh-in-practice@600.jpg 600w, assets/motahareh-in-practice.jpg 1200w"
+              sizes="40vw"
+              size={1200}
+            />
           </div>
 
           <div className="col-span-12 md:col-span-7">
+            {/* Small and roomier on phones, tucked to the right of the section title so
+                the copy flows around it instead of being pushed down a full-width photo. */}
+            <AboutPhoto
+              src="assets/motahareh-in-practice-mobile.jpg"
+              size={480}
+              className="md:hidden float-right w-24 sm:w-32 ml-5 mb-4"
+            />
             <SectionHeader
               index="01"
               kicker="About me"
