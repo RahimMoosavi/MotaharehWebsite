@@ -75,21 +75,41 @@ function Story() {
           </div>
           <div className="col-span-12 lg:col-span-7 space-y-6 text-[16px] md:text-[17px] leading-[1.75] text-ink-soft">
             <p>
-              Most people who find me are not in crisis. They are managing — holding a job, a household,
-              a degree, a family — and quietly running on empty. They can describe the problem clearly and
-              still feel no closer to relief. Insight alone has stopped being enough.
+              All my life, I have been searching for ways to understand myself and the world, to heal it, and
+              to improve it. Being raised with Islamic spirituality and ethics from a young age gave me a
+              foundation that has held me even in my darkest days.
             </p>
             <p>
-              That gap is what drew me to this work. Talking helps, but the body keeps its own record, and for
-              many people faith is not a side topic — it is the frame around everything else. So I trained in
-              three directions at once: psychotherapy, trauma-informed yoga and breathwork, and the Islamic
-              psychospiritual tradition. In practice they are not three separate services. They are one
-              conversation held from three angles.
+              I initially studied Political Science and Criminology, hoping to promote justice at a communal
+              and systemic level. Over time, I realized that working within those systems as they currently
+              exist would pull me away from my core values. I wanted a path where I could serve justice and
+              healing without compromising my integrity.
             </p>
             <p>
-              What I offer is a slower kind of attention. We look at the emotional patterns, the relationships,
-              the nervous system, and — if you want it — the spiritual questions underneath. From there we build
-              something practical you can carry into an ordinary week.
+              I then pursued a Master's in Education, focusing on positive change through learning. My thesis
+              explored the spiritual development of young Muslims in the West, looking at how conflicting
+              social and political narratives can split our sense of self, and how Islamic spirituality —
+              especially the concept of tawheed, the Oneness of God — offers a path back to inner wholeness
+              and connection.
+            </p>
+            <p>
+              During my Master's, I also completed a 200-hour Yoga Teacher Training, where I experienced deep
+              healing and presence through somatic practice. This led me to create and teach a 10-part series,
+              Yoga Philosophy for Muslims, in community and mosque settings, as well as yoga classes for
+              children and teens. I'm especially interested in helping Muslims experience embodiment and
+              presence through a lens that aligns with their faith.
+            </p>
+            <p>
+              To bring all of this together, I pursued a Master of Psychospiritual Studies in the Muslim
+              Stream at Emmanuel College, University of Toronto. This training gave me psychotherapeutic
+              theories and practices that allow me to integrate my learning and provide care and healing for
+              my clients.
+            </p>
+            <p>
+              I am a Registered Psychotherapist (Qualifying) offering spiritually integrated, trauma-informed
+              therapy that can explicitly incorporate Islamic principles, somatic awareness, and yoga-based
+              practices. I work primarily with Muslim teens and adults online navigating anxiety, depression,
+              trauma, identity conflicts, and spiritual struggles.
             </p>
           </div>
         </div>

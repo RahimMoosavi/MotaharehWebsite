@@ -103,9 +103,11 @@ function AboutTeaser() {
               lede="I am a psychotherapist, yoga teacher, and student of the Islamic psychospiritual tradition. I work with people who are functioning on the outside and depleted on the inside."
             />
             <p className="mt-5 text-[16px] leading-[1.7] text-ink-soft max-w-2xl">
-              My work sits where three things meet: what the mind understands, what the body carries,
-              and what the soul is asking for. Sessions are slow, collaborative, and paced by you —
-              never a protocol applied to your life from the outside.
+              I am a Registered Psychotherapist (Qualifying) offering spiritually integrated,
+              trauma-informed therapy that can explicitly incorporate Islamic principles, somatic
+              awareness, and yoga-based practices. I work primarily with Muslim teens and adults
+              online navigating anxiety, depression, trauma, identity conflicts, and spiritual
+              struggles.
             </p>
 
             <div className="mt-7 flex flex-wrap gap-2">
