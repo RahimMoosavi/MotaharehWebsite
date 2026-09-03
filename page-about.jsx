@@ -123,11 +123,14 @@ function Story() {
 function Credentials() {
   const items = [
     ["Registration", "Registered Psychotherapist (Qualifying), CRPO — Ontario"],
-    ["Education", "[ Degree — program, institution, year ]"],
-    ["Clinical training", "[ Key clinical trainings — modality, provider, year ]"],
-    ["Yoga", "[ Yoga teacher training — hours, school, year ] · trauma-informed yoga training"],
-    ["Psychospiritual", "[ Islamic psychospiritual study — teacher or program ]"],
-    ["Languages", "[ Languages you practise in ]"],
+    ["Education", [
+      { degree: "Master of Psychospiritual Studies", institution: "Victoria University in the University of Toronto" },
+      { degree: "Master of Arts, Education", institution: "University of Ottawa" },
+      { degree: "Bachelor of Arts, Political Science and Criminology", institution: "University of Toronto" },
+    ]],
+    ["Yoga", "200-Hour Yoga Teacher Training, Yoga & Tea · Trauma-informed yoga training"],
+    ["Psychospiritual", "Islamic psychospiritual studies, Emmanuel College, University of Toronto"],
+    ["Languages", "English and Farsi"],
   ];
 
   return (
@@ -142,11 +145,22 @@ function Credentials() {
 
         <div className="mt-14 border-t border-ink/15">
           {items.map(([k, v]) => (
-            <div key={k} className="grid grid-cols-12 gap-4 lg:gap-8 items-baseline border-b border-ink/15 py-6">
+            <div key={k} className="grid grid-cols-12 gap-4 lg:gap-8 items-start border-b border-ink/15 py-6">
               <div className="col-span-12 md:col-span-3">
                 <MonoLabel>{k}</MonoLabel>
               </div>
-              <div className="col-span-12 md:col-span-9 text-[16px] leading-[1.6] text-ink">{v}</div>
+              <div className="col-span-12 md:col-span-9 text-[16px] leading-[1.6] text-ink">
+                {Array.isArray(v) ? (
+                  <div className="space-y-3">
+                    {v.map((d) => (
+                      <div key={d.degree}>
+                        <div>{d.degree}</div>
+                        <div className="text-[14px] leading-[1.5] text-ink-soft mt-0.5">{d.institution}</div>
+                      </div>
+                    ))}
+                  </div>
+                ) : v}
+              </div>
             </div>
           ))}
         </div>

@@ -102,14 +102,6 @@ function AboutTeaser() {
               title="Hello, I'm Motahareh."
               lede="I am a psychotherapist, yoga teacher, and student of the Islamic psychospiritual tradition. I work with people who are functioning on the outside and depleted on the inside."
             />
-            <p className="mt-5 text-[16px] leading-[1.7] text-ink-soft max-w-2xl">
-              I am a Registered Psychotherapist (Qualifying) offering spiritually integrated,
-              trauma-informed therapy that can explicitly incorporate Islamic principles, somatic
-              awareness, and yoga-based practices. I work primarily with Muslim teens and adults
-              online navigating anxiety, depression, trauma, identity conflicts, and spiritual
-              struggles.
-            </p>
-
             <div className="mt-7 flex flex-wrap gap-2">
               {[
                 "Registered Psychotherapist (Qualifying)",
