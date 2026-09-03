@@ -48,6 +48,10 @@ function Hero() {
                 fetchpriority="high"
                 alt="A cairn of smooth grey and turquoise stones balanced on a marble plinth inlaid with an Islamic geometric pattern"
                 className="absolute inset-0 w-full h-full object-cover"
+                style={{
+                  maskImage: "radial-gradient(ellipse 78% 78% at 50% 45%, black 55%, transparent 100%)",
+                  WebkitMaskImage: "radial-gradient(ellipse 78% 78% at 50% 45%, black 55%, transparent 100%)",
+                }}
               />
               <div className="absolute inset-0 grain opacity-20 pointer-events-none"></div>
             </div>

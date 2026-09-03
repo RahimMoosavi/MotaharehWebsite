@@ -122,14 +122,13 @@ function Story() {
 
 function Credentials() {
   const items = [
-    ["Registration", "Registered Psychotherapist (Qualifying), CRPO — Ontario"],
+    ["Registration", "Registered Psychotherapist (Qualifying), CRPO"],
     ["Education", [
-      { degree: "Master of Psychospiritual Studies", institution: "Victoria University in the University of Toronto" },
+      { degree: "Master of Psychospiritual Studies", institution: "Emmanuel College, University of Toronto" },
       { degree: "Master of Arts, Education", institution: "University of Ottawa" },
       { degree: "Bachelor of Arts, Political Science and Criminology", institution: "University of Toronto" },
     ]],
     ["Yoga", "200-Hour Yoga Teacher Training, Yoga & Tea · Trauma-informed yoga training"],
-    ["Psychospiritual", "Islamic psychospiritual studies, Emmanuel College, University of Toronto"],
     ["Languages", "English and Farsi"],
   ];
 
