@@ -62,7 +62,7 @@ function AboutPhoto({ src, srcSet, sizes, size, className = "" }) {
         height={size}
         loading="lazy"
         decoding="async"
-        alt="Motahareh, Registered Psychotherapist (Qualifying), in a deep red hijab and woven shawl"
+        alt={PORTRAIT.alt}
         className="absolute inset-0 w-full h-full object-cover"
       />
       <div className="absolute inset-0 grain opacity-20 pointer-events-none"></div>
@@ -76,22 +76,13 @@ function AboutTeaser() {
       <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
         <div className="grid grid-cols-12 gap-x-6 gap-y-10 lg:gap-16 items-center">
           <div className="hidden md:block md:col-span-5">
-            <AboutPhoto
-              src="assets/motahareh-in-practice.jpg"
-              srcSet="assets/motahareh-in-practice@600.jpg 600w, assets/motahareh-in-practice.jpg 1200w"
-              sizes="40vw"
-              size={1200}
-            />
+            <AboutPhoto {...PORTRAIT.tight} sizes="40vw" />
           </div>
 
           <div className="col-span-12 md:col-span-7">
             {/* Small and roomier on phones, tucked to the right of the section title so
                 the copy flows around it instead of being pushed down a full-width photo. */}
-            <AboutPhoto
-              src="assets/motahareh-in-practice-mobile.jpg"
-              size={480}
-              className="md:hidden float-right w-24 sm:w-32 ml-5 mb-4"
-            />
+            <AboutPhoto {...PORTRAIT.roomy} className="md:hidden float-right w-24 sm:w-32 ml-5 mb-4" />
             <SectionHeader
               index="01"
               kicker="About me"

@@ -14,6 +14,24 @@ const PAGES = [
   { key: "the-return",    label: "The Return",     href: "the-return.html" },
 ];
 
+// The one portrait of Motahareh, in two art-directed crops of the same photo.
+// `tight` is an editorial head crop for large slots; `roomy` keeps more headroom
+// and shawl so the face still reads when the photo is rendered small. Both are
+// square and graded to the sand background. Every page draws from here so the
+// crops, the sources, and the alt text cannot drift apart.
+const PORTRAIT = {
+  alt: "Motahareh, Registered Psychotherapist (Qualifying), in a deep red hijab and woven shawl",
+  tight: {
+    src: "assets/motahareh-in-practice.jpg",
+    srcSet: "assets/motahareh-in-practice@600.jpg 600w, assets/motahareh-in-practice.jpg 1200w",
+    size: 1200,
+  },
+  roomy: {
+    src: "assets/motahareh-in-practice-mobile.jpg",
+    size: 480,
+  },
+};
+
 // ---------- Primitives ----------
 
 function MonoLabel({ children, className = "", as = "span" }) {
@@ -340,5 +358,5 @@ function Footer() {
 Object.assign(window, {
   MonoLabel, SectionHeader, ArrowIcon, BookCTA, TextLink,
   Nav, Footer, TrustBanner, ClosingCTA, ServiceCrossLink,
-  BOOKING_URL, CONTACT_EMAIL, PAGES,
+  BOOKING_URL, CONTACT_EMAIL, PAGES, PORTRAIT,
 });

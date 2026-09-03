@@ -1,5 +1,34 @@
 // page-about.jsx — who I am and how I work.
 
+// The hero portrait — the same photo the home page carries, art-directed per
+// breakpoint. From lg up the tight crop fills the column as a 4:5 plate beside the
+// headline. Below that the column is the full page width, where a full-bleed face
+// would swallow the hero, so it steps down to a contained square of the roomier
+// crop — capped at 240px, the width that source stays sharp to on a 2x screen.
+// <picture> does the switching, so the browser fetches exactly one of the two.
+function HeroPortrait() {
+  return (
+    <div className="w-44 sm:w-52 md:w-60 lg:w-full aspect-square lg:aspect-[4/5] bg-sand-100 rounded-sm ring-soft relative overflow-hidden">
+      <picture>
+        <source
+          media="(min-width: 1024px)"
+          srcSet={PORTRAIT.tight.srcSet}
+          sizes="40vw"
+        />
+        <img
+          src={PORTRAIT.roomy.src}
+          width={PORTRAIT.roomy.size}
+          height={PORTRAIT.roomy.size}
+          decoding="async"
+          alt={PORTRAIT.alt}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+      </picture>
+      <div className="absolute inset-0 grain opacity-20 pointer-events-none"></div>
+    </div>
+  );
+}
+
 function AboutHero() {
   return (
     <section data-screen-label="About — Hero" className="relative pt-[112px] pb-16 md:pb-24 overflow-hidden">
@@ -23,11 +52,10 @@ function AboutHero() {
             </div>
           </div>
 
-          <div className="col-span-12 lg:col-span-5">
-            <div className="aspect-[4/5] placeholder-img rounded-sm ring-soft relative overflow-hidden">
-              <div className="absolute inset-0 grain opacity-30"></div>
-              <div className="absolute top-4 right-4 mono-label bg-sand-50 px-2 py-1">Portrait</div>
-            </div>
+          {/* On phones the portrait opens the hero, above the name — the whole hero
+              still lands in one screen. From lg it returns to the right column. */}
+          <div className="col-span-12 lg:col-span-5 order-first lg:order-none">
+            <HeroPortrait />
           </div>
         </div>
       </div>

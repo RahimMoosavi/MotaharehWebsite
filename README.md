@@ -51,8 +51,11 @@ A few things are placeholders and need real values:
   languages). Fill these in or delete the rows.
 - **Fees** — `$175` per 50-minute session and the insurer list are carried over from the
   previous version of the site. Confirm both.
-- **Photography** — the About-teaser image on the home page is real: two art-directed
-  crops of one portrait, `assets/motahareh-in-practice.jpg` (tight, desktop) and
-  `assets/motahareh-in-practice-mobile.jpg` (roomier, phone thumbnail), both graded
-  with a `#f5efe3` backdrop. Every other image is still a hatched placeholder block.
+- **Photography** — the portrait is real and shared by the home-page About teaser and
+  the About-page hero. It ships as two art-directed crops defined once in `PORTRAIT`
+  (`shared.jsx`): `assets/motahareh-in-practice.jpg` (tight, for large slots) and
+  `assets/motahareh-in-practice-mobile.jpg` (roomier, for small ones), both graded with
+  a `#f5efe3` backdrop. The roomy crop is only 480px, which caps the phone/tablet
+  rendering of the About hero at 240px wide; a larger export of that crop would let it
+  grow. Remaining images are hatched placeholder blocks.
 - **`therapy@motahareh.ca`** is used for every contact link.
