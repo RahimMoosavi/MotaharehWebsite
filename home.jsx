@@ -32,11 +32,24 @@ function Hero() {
           </div>
 
           <div className="col-span-12 lg:col-span-5">
-            <div className="aspect-[4/5] w-full placeholder-img rounded-sm ring-soft relative overflow-hidden">
-              <div className="absolute inset-0 flex items-end p-5">
-                <div className="text-[10px] font-mono text-ink/50">[ portrait — practitioner, soft natural light ]</div>
-              </div>
-              <div className="absolute top-4 right-4 mono-label bg-sand-50 px-2 py-1">Portrait</div>
+            {/* Hero image. Unlike the About teaser's photo this one is above the fold, so
+                it loads eagerly and at high priority — fetchpriority is spelled lowercase
+                because React 18 forwards it verbatim as a plain attribute. Capped and
+                centred until the two-column split at lg: at full width the 4:5 crop eats
+                a whole phone screen before any of the page shows. */}
+            <div className="aspect-[4/5] w-full max-w-[200px] sm:max-w-[260px] mx-auto lg:max-w-none lg:mx-0 bg-sand-100 rounded-sm ring-soft relative overflow-hidden">
+              <img
+                src="assets/stone-cairn.jpg"
+                srcSet="assets/stone-cairn@600.jpg 600w, assets/stone-cairn.jpg 1000w"
+                sizes="(min-width: 1024px) 40vw, (min-width: 640px) 260px, 200px"
+                width={1000}
+                height={1250}
+                decoding="async"
+                fetchpriority="high"
+                alt="A cairn of smooth grey and turquoise stones balanced on a marble plinth inlaid with an Islamic geometric pattern"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 grain opacity-20 pointer-events-none"></div>
             </div>
           </div>
         </div>
