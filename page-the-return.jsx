@@ -51,7 +51,7 @@ function ReturnHero() {
           <div className="col-span-12 lg:col-span-4">
             <div className="border-t border-sand-200/15 divide-y divide-sand-200/15">
               {[
-                ["6 sessions",     "One per week (flexible)"],
+                ["6 sessions",     "At your own pace"],
                 ["Fully virtual",  "Secure video"],
                 ["$175 / session", "Insurance eligible · Sliding scale"],
                 ["Rolling start",  "Begin when you're ready"],
@@ -265,7 +265,7 @@ function Pricing() {
 
               <div className="mt-10 border-t border-sand-200/15 pt-8 space-y-4">
                 {[
-                  ["Schedule", "Weekly or biweekly — your pace"],
+                  ["Schedule", "At your own pace"],
                   ["Duration", "50 min per session"],
                   ["Delivery", "Virtual · encrypted video"],
                   ["Start", "Rolling — begin when you're ready"],
@@ -318,11 +318,11 @@ function Pricing() {
 
 function ReturnFAQ() {
   const faqs = [
-    { q: "How is this different from regular therapy?", a: "Regular therapy addresses the mind. The Return addresses the mind, body, and soul together — reflective psychotherapy, embodied regulation, spiritual grounding, and personalized integration, woven into a program co-created around your needs." },
+    { q: "How is this different from regular therapy?", a: "Many people aren't looking for traditional, open-ended talk therapy — they want something more practical and curated, with tools they can actually carry into everyday life. The Return gives you the full experience of psychotherapy inside a container that offers more than regular sessions do: a focused arc, embodied practice, and a toolkit you leave with, woven around your needs." },
     { q: "Do I need yoga experience?", a: "None at all. The embodiment and movement elements are gentle, invitational, and adapted entirely to you. You won't be doing a yoga class — you'll be learning tools for your nervous system." },
     { q: "Is this religious counselling?", a: "No. It's clinical psychotherapy that is spiritually fluent. Islamic practices like dhikr, du'a, and contemplation are options we can draw on together if you desire them — not a default or a requirement." },
     { q: "What if I need more than 6 sessions?", a: "Many clients continue with ongoing therapy after the program. The 6 weeks are designed to be a focused, intensive container — a beginning, not the whole story." },
-    { q: "Can I do biweekly instead of weekly?", a: "Yes. The rhythm is yours to set. Weekly gives momentum; biweekly gives integration time. We decide together based on what serves you." },
+    { q: "Can I set my own schedule?", a: "Yes. Sessions happen at your own pace — we set a rhythm that works for you and can adjust it anytime based on what serves you." },
     { q: "Is this covered by insurance?", a: "Each session is billed as psychotherapy with a Registered Psychotherapist (Qualifying). Most extended health plans in Ontario cover RP services — check your benefits or ask your HR department. Sliding-scale pricing is also available if cost is a barrier." },
     { q: "What happens in the discovery call?", a: "We talk for 15–20 minutes about what's bringing you in and what you're hoping for. I'll share how the program works and we'll figure out together if it's the right fit. No pressure, no cost." },
   ];

@@ -47,9 +47,11 @@ function SectionHeader({ index, kicker, title, lede, align = "left" }) {
         <span className="h-px flex-1 bg-ink/15 max-w-[120px]"></span>
         <MonoLabel>{kicker}</MonoLabel>
       </div>
-      <h2 className="font-display text-[32px] leading-[1.08] sm:text-[40px] sm:leading-[1.05] md:text-[56px] md:leading-[1.02] mt-5 text-ink">
-        {title}
-      </h2>
+      {title && (
+        <h2 className="font-display text-[32px] leading-[1.08] sm:text-[40px] sm:leading-[1.05] md:text-[56px] md:leading-[1.02] mt-5 text-ink">
+          {title}
+        </h2>
+      )}
       {lede && <p className="mt-5 text-[17px] leading-[1.6] text-ink-soft max-w-2xl">{lede}</p>}
     </div>
   );

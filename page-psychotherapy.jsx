@@ -1,4 +1,4 @@
-// page-psychotherapy.jsx — the core one-on-one therapy service.
+// page-psychotherapy.jsx — the core therapy service: individual, couples, and family.
 
 function PsychHero() {
   return (
@@ -17,8 +17,9 @@ function PsychHero() {
               <em className="text-terra-600">one hour at a time.</em>
             </h1>
             <p className="mt-7 text-[18px] md:text-[20px] leading-[1.55] text-ink-soft max-w-xl">
-              Individual therapy for adults — trauma-informed, attachment-based, and
-              culturally fluent. Delivered securely by video, from wherever you actually are.
+              Individual therapy for adults and teens, couples therapy, and family therapy —
+              trauma-informed, attachment-based, and culturally fluent. Delivered securely by
+              video, from wherever you actually are.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-5">
               <BookCTA size="lg">Book a free consult</BookCTA>
@@ -80,13 +81,13 @@ function HowItWorks() {
   const steps = [
     ["Free consult", "15 minutes by video. What brought you here, how I work, and whether we are a fit. No obligation either way."],
     ["First sessions", "Mostly listening — your history, what is working, what is not. We agree on what we are actually aiming at."],
-    ["Ongoing rhythm", "Weekly or biweekly, 50 minutes. Reflection, regulation, and practices you take into the week between."],
+    ["Ongoing rhythm", "At your own pace, 50 minutes. Reflection, regulation, and practices you carry with you between sessions."],
   ];
 
   const facts = [
     ["Format", "Secure video"],
     ["Length", "50 minutes"],
-    ["Cadence", "Weekly or biweekly"],
+    ["Cadence", "At your own pace"],
     ["Booking", "Online via MePro"],
   ];
 
@@ -125,7 +126,7 @@ function Modalities() {
     ["Attachment-based", "The earliest relationships shaped the architecture. We work with what is still standing."],
     ["Parts-informed", "The self is plural. We listen to the protector, the exile, and the one who booked the session."],
     ["Trauma-focused & somatic", "Tracking the nervous system alongside the narrative. Regulation before insight."],
-    ["Cognitive & ERP-informed", "For anxiety and OCD: structured exposure work, gently and collaboratively."],
+    ["Relational", "We work with what happens between people — couples, families, and the patterns you keep repeating with each other."],
     ["Psychospiritual integration", "When meaning, prayer, or spiritual struggle are part of what you came in carrying."],
     ["Culturally grounded", "Faith fluency and cultural literacy are foundational here, not an add-on."],
   ];
@@ -163,7 +164,8 @@ function Modalities() {
 function FeesInsurance() {
   const tiers = [
     { t: "Free consult", price: "$0", d: "15 minutes · video", flag: false },
-    { t: "Individual session", price: "$175", d: "50 minutes · weekly or biweekly", flag: true },
+    { t: "Individual session", price: "$175", d: "50 minutes · at your own pace", flag: true },
+    { t: "Couples & family session", price: "$200", d: "60 minutes · at your own pace", flag: true },
   ];
 
   return (
@@ -172,10 +174,9 @@ function FeesInsurance() {
         <SectionHeader
           index="04"
           kicker="Fees & insurance"
-          title="Transparent, in Canadian dollars."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-ink/10 mt-14 ring-soft rounded-sm overflow-hidden">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-ink/10 mt-14 ring-soft rounded-sm overflow-hidden">
           {tiers.map((f) => (
             <div key={f.t} className={`p-8 lg:p-10 ${f.flag ? "bg-forest-900 text-sand-100" : "bg-sand-50"}`}>
               <MonoLabel className={f.flag ? "!text-terra-400" : ""}>{f.t}</MonoLabel>
@@ -229,7 +230,7 @@ function PsychFAQ() {
     },
     {
       q: "Is virtual therapy as effective as in person?",
-      a: "For most concerns the research finds outcomes comparable to in-person work. Practically it removes the commute, lets you be in your own space, and makes a consistent weekly rhythm far easier to sustain.",
+      a: "For most concerns the research finds outcomes comparable to in-person work. Practically it removes the commute, lets you be in your own space, and makes a consistent rhythm far easier to sustain at your own pace.",
     },
     {
       q: "Do I have to be religious to work with you?",

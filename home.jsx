@@ -133,23 +133,23 @@ function ApproachTeaser() {
   const pillars = [
     {
       n: "01",
-      t: "Whole person",
-      d: "Mind, body, spirit, and relationships are not separate files. We work with all of them, in whatever order your life is asking for.",
+      t: "Whole-person healing",
+      d: "You are more than any one struggle or symptom. We make space for your thoughts, emotions, body, relationships, and inner life, understanding how each shapes the others.",
     },
     {
       n: "02",
-      t: "Regulation before insight",
-      d: "Understanding rarely lands in a body that does not feel safe. We build steadiness first, then go where the story leads.",
+      t: "Healing in relationship",
+      d: "We are shaped in relationship, and often heal through relationship too. Together, we explore the patterns, attachments, and connections that influence how you relate to yourself and to the people around you.",
     },
     {
       n: "03",
-      t: "Your pace, your consent",
-      d: "Nothing is pushed. You choose what we open, how far we go, and when we stop. Agency is part of the work.",
+      t: "Embodied healing",
+      d: "Sometimes understanding something is not enough to change how it lives within us. We may work with the body, breath, emotions, and nervous system to help insight become something you can actually feel and live.",
     },
     {
       n: "04",
-      t: "Faith made welcome",
-      d: "Bring your faith into the room, or leave it at the door. Spiritual language is offered when you want it — never assumed.",
+      t: "Spiritually & culturally responsive",
+      d: "Your spirituality, culture, values, and ways of making meaning are welcome here. They can become part of our work in whatever way feels authentic and supportive to you.",
     },
   ];
 
@@ -159,8 +159,8 @@ function ApproachTeaser() {
         <SectionHeader
           index="02"
           kicker="My approach"
-          title="Healing you can actually live in."
-          lede="Not a method applied to you, but a practice we build together — one that keeps working after the session ends."
+          title="How we'll work together."
+          lede="There is no single path to healing. Together, we'll explore your experience with curiosity and care, making room for all of you."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-ink/10 mt-14 ring-soft rounded-sm overflow-hidden">
