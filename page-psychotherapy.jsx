@@ -5,18 +5,18 @@ function PsychHero() {
     <section data-screen-label="Psychotherapy — Hero" className="relative pt-[112px] pb-16 md:pb-24 overflow-hidden">
       <div className="absolute inset-0 grain opacity-60 pointer-events-none"></div>
       <div className="max-w-[1280px] mx-auto px-6 lg:px-10 relative">
-        <div className="grid grid-cols-12 gap-x-6 gap-y-8 lg:gap-14 items-end">
-          <div className="col-span-12 lg:col-span-7">
+        <div className="grid grid-cols-12 gap-x-6 gap-y-10 md:gap-x-10 lg:gap-14 items-center">
+          <div className="col-span-12 md:col-span-7">
             <div className="flex items-center gap-3">
               <span className="w-2 h-2 rounded-full bg-terra-500"></span>
               <MonoLabel>Virtual · Insurance eligible in Ontario</MonoLabel>
             </div>
-            <h1 className="font-display text-[38px] leading-[1.05] sm:text-[48px] sm:leading-[1.02] md:text-[80px] md:leading-[0.98] tracking-[-0.02em] text-ink mt-6">
+            <h1 className="font-display text-[38px] leading-[1.05] sm:text-[48px] sm:leading-[1.02] md:text-[60px] md:leading-[1] lg:text-[80px] lg:leading-[0.98] tracking-[-0.02em] text-ink mt-6">
               Psychotherapy,{" "}
               <br className="hidden md:block" />
               <em className="text-terra-600">one hour at a time.</em>
             </h1>
-            <p className="mt-7 text-[18px] md:text-[20px] leading-[1.55] text-ink-soft max-w-xl">
+            <p className="mt-7 text-[18px] lg:text-[20px] leading-[1.55] text-ink-soft max-w-xl">
               Individual therapy for adults and teens, couples therapy, and family therapy —
               trauma-informed, attachment-based, and culturally fluent. Delivered securely by
               video, from wherever you actually are.
@@ -27,11 +27,22 @@ function PsychHero() {
             </div>
           </div>
 
-          <div className="col-span-12 lg:col-span-5">
-            <div className="aspect-[4/5] placeholder-img rounded-sm ring-soft relative overflow-hidden">
-              <div className="absolute inset-0 grain opacity-30"></div>
-              <div className="absolute top-4 right-4 mono-label bg-sand-50 px-2 py-1">Therapy</div>
-            </div>
+          <div className="col-span-12 md:col-span-5">
+            {/* Hero illustration. Beside the copy from md up as a 4:5 portrait; on phones a
+                landscape crop of the same scene (only the viewBox differs) so it reads as a
+                full-width banner instead of a narrow box stranded under the text. */}
+            <picture>
+              <source media="(max-width: 767px)" srcSet="assets/therapy-room-wide.svg" width={1180} height={885} />
+              <img
+                src="assets/therapy-room.svg"
+                width={800}
+                height={1000}
+                decoding="async"
+                fetchpriority="high"
+                alt="Illustration of a quiet room: an arched window onto soft hills, two armchairs angled toward each other, tea and a plant between them"
+                className="block w-full h-auto aspect-[4/3] md:aspect-[4/5] object-cover bg-sand-100 rounded-sm ring-soft"
+              />
+            </picture>
           </div>
         </div>
       </div>

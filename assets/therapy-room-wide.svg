@@ -1,0 +1,110 @@
+<!-- Landscape crop of therapy-room.svg for phones. Generated from it: keep the two in sync (only the viewBox differs). -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-190 80 1180 885" role="img" aria-labelledby="t">
+  <title id="t">A quiet room: an arched window opening onto soft hills, two armchairs angled toward each other, a cup of tea and a plant between them</title>
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f5efe3"/>
+      <stop offset="1" stop-color="#ece2cd"/>
+    </linearGradient>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f3d9c2"/>
+      <stop offset="0.55" stop-color="#f7e8d8"/>
+      <stop offset="1" stop-color="#fbf8f2"/>
+    </linearGradient>
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#dcceae"/>
+      <stop offset="1" stop-color="#c9b389"/>
+    </linearGradient>
+    <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fbf8f2" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#fbf8f2" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="arch">
+      <path d="M260 640 V330 Q260 220 400 150 Q540 220 540 330 V640 Z"/>
+    </clipPath>
+    <pattern id="girih" width="60" height="60" patternUnits="userSpaceOnUse">
+      <g fill="none" stroke="#9c4f2b" stroke-opacity="0.18" stroke-width="1.2">
+        <path d="M30 6 L36 24 L54 30 L36 36 L30 54 L24 36 L6 30 L24 24 Z"/>
+        <circle cx="30" cy="30" r="7"/>
+      </g>
+    </pattern>
+  </defs>
+
+  <!-- wall -->
+  <rect x="-300" width="1400" height="1000" fill="url(#wall)"/>
+
+  <!-- window: arch frame, view of hills -->
+  <path d="M244 652 V330 Q244 208 400 132 Q556 208 556 330 V652 Z" fill="#dcceae"/>
+  <g clip-path="url(#arch)">
+    <rect x="250" y="140" width="300" height="510" fill="url(#sky)"/>
+    <circle cx="430" cy="330" r="34" fill="#e7a983" opacity="0.55"/>
+    <path d="M250 500 Q330 430 410 470 T550 450 V650 H250 Z" fill="#bcc7b1"/>
+    <path d="M250 545 Q350 490 450 530 T550 515 V650 H250 Z" fill="#9caa8e"/>
+    <path d="M250 595 Q340 560 430 585 T550 575 V650 H250 Z" fill="#7d8d6d"/>
+    <!-- mullions -->
+    <path d="M400 150 V640 M260 420 H540" stroke="#dcceae" stroke-width="7"/>
+  </g>
+  <rect x="226" y="640" width="348" height="18" rx="3" fill="#c9b389"/>
+
+  <!-- floor -->
+  <rect x="-300" y="760" width="1400" height="240" fill="url(#floor)"/>
+  <rect x="-300" y="756" width="1400" height="6" fill="#c9b389" opacity="0.7"/>
+
+  <!-- light falling from the window onto the floor -->
+  <path d="M262 658 L538 658 L640 1000 L150 1000 Z" fill="url(#beam)" opacity="0.6"/>
+
+  <!-- rug with a geometric border -->
+  <ellipse cx="400" cy="880" rx="300" ry="62" fill="#b8623a" opacity="0.85"/>
+  <ellipse cx="400" cy="880" rx="300" ry="62" fill="url(#girih)"/>
+  <ellipse cx="400" cy="880" rx="262" ry="48" fill="none" stroke="#f5efe3" stroke-opacity="0.45" stroke-width="2" stroke-dasharray="2 9"/>
+
+  <!-- left armchair (forest) -->
+  <g>
+    <path d="M70 660 Q70 600 130 600 H210 Q262 600 262 660 V800 H70 Z" fill="#2f3d31"/>
+    <rect x="58" y="720" width="56" height="110" rx="24" fill="#243024"/>
+    <rect x="224" y="730" width="50" height="100" rx="22" fill="#243024"/>
+    <rect x="104" y="752" width="130" height="58" rx="16" fill="#3b4a3c"/>
+    <path d="M90 830 V872 M248 830 V872" stroke="#7a3d20" stroke-width="9" stroke-linecap="round"/>
+    <!-- folded throw -->
+    <path d="M118 690 Q170 676 210 700 L204 752 Q160 736 112 748 Z" fill="#c8784f" opacity="0.9"/>
+  </g>
+
+  <!-- right armchair (sage), angled toward the left one -->
+  <g>
+    <path d="M538 680 Q538 610 600 606 L676 600 Q732 600 732 664 V806 H538 Z" fill="#9caa8e"/>
+    <rect x="526" y="736" width="50" height="100" rx="22" fill="#7d8d6d"/>
+    <rect x="690" y="724" width="56" height="112" rx="24" fill="#7d8d6d"/>
+    <rect x="566" y="756" width="130" height="58" rx="16" fill="#bcc7b1"/>
+    <path d="M552 836 V876 M712 836 V876" stroke="#7a3d20" stroke-width="9" stroke-linecap="round"/>
+  </g>
+
+  <!-- side table between them -->
+  <ellipse cx="400" cy="776" rx="62" ry="13" fill="#7a3d20"/>
+  <path d="M400 788 V862 M372 862 H428" stroke="#7a3d20" stroke-width="8" stroke-linecap="round"/>
+  <!-- tea glass -->
+  <path d="M378 736 L382 768 H404 L408 736 Z" fill="#b8623a" opacity="0.85"/>
+  <path d="M376 734 H410" stroke="#f5efe3" stroke-width="3" stroke-linecap="round"/>
+  <path d="M388 724 Q384 712 390 702 M398 722 Q394 708 400 698" stroke="#6a7268" stroke-opacity="0.45" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- small stone cairn -->
+  <ellipse cx="434" cy="764" rx="13" ry="5" fill="#6a7268"/>
+  <ellipse cx="434" cy="755" rx="9" ry="4" fill="#5e8f8a"/>
+  <ellipse cx="434" cy="748" rx="6" ry="3" fill="#6a7268"/>
+
+  <!-- plant in the corner -->
+  <g>
+    <path d="M660 410 Q700 330 690 270" stroke="#5e6e51" stroke-width="5" fill="none"/>
+    <path d="M690 270 Q720 290 712 330 Q690 310 690 270 Z" fill="#7d8d6d"/>
+    <path d="M676 340 Q640 320 640 286 Q676 300 676 340 Z" fill="#9caa8e"/>
+    <path d="M684 300 Q730 300 744 338 Q700 340 684 300 Z" fill="#5e6e51"/>
+    <path d="M668 380 Q626 372 612 340 Q656 340 668 380 Z" fill="#7d8d6d"/>
+    <path d="M664 400 Q708 384 730 404 Q694 420 664 400 Z" fill="#9caa8e"/>
+    <path d="M626 410 H708 L696 500 H638 Z" fill="#b8623a"/>
+    <rect x="620" y="404" width="94" height="14" rx="3" fill="#9c4f2b"/>
+    <path d="M644 500 L634 770 M690 500 L700 770 M640 640 H694" stroke="#7a3d20" stroke-width="6" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- hanging lamp -->
+  <path d="M130 0 V180" stroke="#6a7268" stroke-width="2"/>
+  <path d="M100 210 Q100 180 130 180 Q160 180 160 210 Z" fill="#9c4f2b"/>
+  <ellipse cx="130" cy="212" rx="18" ry="5" fill="#f7e0c6"/>
+</svg>
