@@ -11,7 +11,9 @@ const CONTACT_EMAIL = "therapy@motahareh.ca";
 const PAGES = [
   { key: "about",         label: "About",          href: "about.html" },
   { key: "psychotherapy", label: "Psychotherapy",  href: "psychotherapy.html" },
-  { key: "the-return",    label: "The Return",     href: "the-return.html" },
+  // The Return is hidden for now. Its page (the-return.html) still exists but is
+  // unlinked and noindexed; restore this line to bring it back into the nav/footer.
+  // { key: "the-return",    label: "The Return",     href: "the-return.html" },
 ];
 
 // The one portrait of Motahareh, in two art-directed crops of the same photo.
@@ -266,15 +268,17 @@ function ServiceCrossLink({ exclude }) {
       href: "psychotherapy.html",
       tag: "Virtual · Insurance eligible",
     },
-    {
-      key: "the-return",
-      label: "The Return",
-      copy: "A 6-week mind–body–spirit integration program.",
-      href: "the-return.html",
-      tag: "⌖ Signature program",
-    },
+    // Hidden for now — uncomment to list The Return again.
+    // {
+    //   key: "the-return",
+    //   label: "The Return",
+    //   copy: "A 6-week mind–body–spirit integration program.",
+    //   href: "the-return.html",
+    //   tag: "⌖ Signature program",
+    // },
   ];
   const items = all.filter((s) => s.key !== exclude);
+  if (items.length === 0) return null;
 
   return (
     <section className="py-20 md:py-28 bg-sand-100/70 border-y border-ink/8">
